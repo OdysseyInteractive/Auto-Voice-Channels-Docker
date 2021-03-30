@@ -4,6 +4,8 @@ https://github.com/gregzaal/Auto-Voice-Channels
 
 This pulls the latest zip file of the bot from github.
 
+This fork adds a heartbeat endpoint on port 80 to allow hosting on AWS Lightsail Containers.
+
 ***Please make sure you first read the documentation of Auto-Voice-Channels.**
 
 ## Important
@@ -23,14 +25,14 @@ docker run -d \
   -e DISABLE_LOOP=false \
   -e RDY_MESSAGE=false \
   -v /path/to/folder:/AutoVoiceChannels/guilds:Z \
-  morgyn/autovoicechannels
+  odysseyinteractive/autovoicechannels
 ```
 ### docker-compose
 ```
 version: '2'
 services:
   avc:
-    image: morgyn/autovoicechannels
+    image: odysseyinteractive/autovoicechannels
     container_name: AutoVoiceChannels
     environment:
       - ADMIN_ID=<ADMIN ID>
