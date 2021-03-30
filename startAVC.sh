@@ -45,4 +45,6 @@ cat >config.json <<CONFIG_JSON
 
 CONFIG_JSON
 
+python ./heartbeat.py&
+
 python ./auto-voice-channels.py

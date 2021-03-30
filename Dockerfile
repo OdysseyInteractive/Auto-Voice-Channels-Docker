@@ -17,6 +17,8 @@ WORKDIR /AutoVoiceChannels
 
 RUN apt-get -y install build-essential &&\
     pip install -r /AutoVoiceChannels/requirements.txt &&\
+    pip install flask &&\
+    pip install flask_restful &&\
     apt-get -y remove build-essential
     
 # Clear unused files
@@ -26,6 +28,9 @@ RUN apt clean && \
 	/var/lib/apt/lists/* \
 	/var/tmp/*
 
+COPY heartbeat.py heartbeat.py
 COPY startAVC.sh startAVC.sh
+
+EXPOSE 80
 
 CMD [ "bash", "startAVC.sh" ]
