@@ -19,7 +19,8 @@ RUN apt-get -y install build-essential &&\
     pip install -r /AutoVoiceChannels/requirements.txt &&\
     pip install flask &&\
     pip install flask_restful &&\
-    apt-get -y remove build-essential
+    apt-get -y remove build-essential &&\
+    pip install --upgrade discord.py
     
 # Clear unused files
 RUN apt clean && \
