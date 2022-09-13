@@ -1,7 +1,7 @@
 FROM python:slim
 
 ENV DISABLE_LOOP=false
-ENV HEARTBEAT_TIMEOUT=60
+ENV HEARTBEAT_TIMEOUT=61
 ENV RDY_MESSAGE=false
 
 RUN apt-get update &&\
@@ -19,8 +19,7 @@ RUN apt-get -y install build-essential &&\
     pip install -r /AutoVoiceChannels/requirements.txt &&\
     pip install flask &&\
     pip install flask_restful &&\
-    apt-get -y remove build-essential &&\
-    pip install --upgrade discord.py
+    apt-get -y remove build-essential
     
 # Clear unused files
 RUN apt clean && \
